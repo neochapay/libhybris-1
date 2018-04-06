@@ -115,6 +115,7 @@ extern "C" EGLBoolean eglplatformcommon_eglQueryWaylandBufferWL(EGLDisplay dpy,
 		case HAL_PIXEL_FORMAT_RGB_565:
 			*value = EGL_TEXTURE_RGB;
 			break;
+		case HAL_PIXEL_FORMAT_BGRA_8888:
 		case HAL_PIXEL_FORMAT_RGBA_8888:
 			*value = EGL_TEXTURE_RGBA;
 			break;
