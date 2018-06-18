@@ -1042,9 +1042,12 @@ void glViewport (GLint x, GLint y, GLsizei width, GLsizei height)
 	(*_glViewport)(x, y, width, height);
 }
 
+#include "../egl/ws.h"
+
 void glEGLImageTargetTexture2DOES (GLenum target, GLeglImageOES image)
 {
-	(*_glEGLImageTargetTexture2DOES)(target, image);
+	struct egl_image *img = image;
+	(*_glEGLImageTargetTexture2DOES)(target, img ? img->egl_image : NULL);
 }
 
 
